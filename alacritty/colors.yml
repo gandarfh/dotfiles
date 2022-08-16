@@ -1,0 +1,46 @@
+# Colors (viscond)
+colors:
+  # Default colors
+  primary:
+    background: '#090909'
+    foreground: '#abb2bf'
+
+  # Normal colors
+  normal:
+    # NOTE: Use '#131613' for the `black` color if you'd like to see
+    # black text on the background.
+    black:   '#1a1a1a'
+    red:     '#e06c75'
+    green:   '#98c379'
+    yellow:  '#E5C07B'
+    blue:    '#4422ff'
+    magenta: '#be5046'
+    cyan:    '#709aed'
+    white:   '#abb2bf'
+
+
+  # Bright colors
+  bright:
+    black:   '#abb2bf'
+    red:     '#e06c75'
+    green:   '#98c379'
+    yellow:  '#E5C07B'
+    blue:    '#90e0ef'
+    magenta: '#be5046'
+    cyan:    '#709aed'
+    white:   '#f2f2f2'
+
+  # Dim colors
+  #
+  # If the dim colors are not set, they will be calculated automatically based
+  # on the `normal` colors.
+  dim:
+    black:   '#1a1a1a'
+    red:     '#e06c75'
+    green:   '#98c379'
+    yellow:  '#E5C07B'
+    blue:    '#4422ff'
+    magenta: '#be5046'
+    cyan:    '#709aed'
+    white:   '#abb2bf'
+

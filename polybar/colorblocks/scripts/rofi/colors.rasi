@@ -1,0 +1,39 @@
+/* colors */
+
+* {
+  fg: #abb2bf;
+  bg: #090909;
+  abg: #090909;
+  dark: #1a1a1a;
+  accent: #BBBBBB;
+  darkgray: #2a2f3e;
+  context: #4b5263;
+  popupback: #282c34;
+  searchorange: #613214;
+  searchblue: #5e81ac;
+  gray: #5c6370;
+  lightgray: #abb2bf;
+  blue: #4422ff;
+  darkblue: #223E55;
+  green: #98b44b;
+  cyan: #56B6C2;
+  red: #e06c75;
+  orange: #D19A66;
+  lred: #be5046;
+  yellow: #E5C07B;
+  yorange: #D7BA7D;
+  purple: #C678DD;
+  magenta: #D16D9E;
+  cfg: #515052;
+  cbg: #AEAFAD;
+  signadd: #a8d053;
+  signchange: #98d1e1;
+  signdelete: #dd9c9f;
+  errorred: #F44747;
+  warningorange: #ff8800;
+  infoyellow: #FFCC66;
+  hintblue: #4FC1FF;
+  purpletest: #ff007c;
+  cyantest: #00dfff;
+  uiblue: #264F78;
+}
