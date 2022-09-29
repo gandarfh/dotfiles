@@ -9,7 +9,7 @@ colors:
   normal:
     # NOTE: Use '#131613' for the `black` color if you'd like to see
     # black text on the background.
-    black:   '#1a1a1a'
+    black: '#090909'
     red:     '#e06c75'
     green:   '#98c379'
     yellow:  '#E5C07B'

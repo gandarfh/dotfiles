@@ -1,5 +1,7 @@
-export GPG_TTY=$(tty)  
+export GPG_TTY=$(tty)
+export GOPATH=$HOME/go
 export PATH=$HOME/.local/bin:$HOME/.cargo/bin:$PATH
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 export DOCKER_HOST=unix:///var/run/docker.sock
 
 
@@ -24,11 +26,10 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 	[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
   alias ltr="lein trampoline repl :headless &"
-  alias air="$HOME/go/bin/air"
   alias ghd="gh dash"
 	alias ls="exa"
 	alias lg="lazygit"
-  alias lzd="lazydocker" 
+  alias lzd="lazydocker"
 	alias cat2="bat --style=auto"
   alias ex="exit"
   alias colors="curl -s https://gist.githubusercontent.com/HaleTom/89ffe32783f89f403bba96bd7bcd1263/raw/ | bash"
@@ -38,7 +39,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 
 	### Added by Zinit's installer
 	if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
-	    print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})¿%f"
+	    print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})Â¿%f"
 			    command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
 					    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
 							        print -P "%F{33} %F{34}Installation successful.%f%b" || \
@@ -60,3 +61,4 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 
 															### End of Zinit's installer chunk
 
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme

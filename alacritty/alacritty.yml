@@ -1,21 +1,21 @@
-import:	
+import:
   - ~/.config/alacritty/colors.yml
   - ~/.config/alacritty/fonts.yml
 
 window:
-  opacity: 0.74
+  # opacity: 0.74
 
   dimensions:
     columns: 0
     lines: 0
 
   padding:
-    x: 0 
-    y: 1 
+    x: 0
+    y: 1
 
   dynamic_padding: false
 
-  decorations: full 
+  decorations: full
 
   title: Alacritty
 
@@ -56,10 +56,10 @@ selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
 
   # When set to `true`, selected text will be copied to the primary clipboard.
-  save_to_clipboard: true 
+  save_to_clipboard: true
 
 # Allow terminal applications to change Alacritty's window title.
-dynamic_title: false 
+dynamic_title: false
 
 cursor:
   # Cursor style

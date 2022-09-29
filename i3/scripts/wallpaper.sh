@@ -10,7 +10,7 @@ fi
 #===change these config start===
 
 #wallpapers directory
-path=/usr/share/backgrounds/i3/
+path=$HOME/dotfiles/wallpapers/
 
 while true
 do
