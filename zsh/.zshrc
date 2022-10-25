@@ -22,9 +22,19 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   setopt SHARE_HISTORY
 
 
+function = 
+{
+  echo "$@" | bc -l
+}
+
+
+
 	# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 	[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+  alias calc="="
+  alias screenkey="screenkey -p fixed -g 20%x5%-5%-5%"
+  alias kubectl="minikube kubectl --"
   alias open="xdg-open"
   alias ltr="lein trampoline repl :headless &"
   alias ghd="gh dash"
@@ -63,3 +73,4 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 															### End of Zinit's installer chunk
 
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+export PATH=$PATH:$HOME/bin

@@ -2,8 +2,10 @@
 vim.opt.spell = false
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
+
 -- vim.opt.spelllang = { "en", "pt_br" }
 
+vim.opt.showcmd = true
 vim.opt.relativenumber = true
 vim.opt.colorcolumn = "99999"
 vim.opt.clipboard = "unnamedplus"
@@ -25,29 +27,46 @@ vim.g.maplocalleader = mapleader
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space" -- add your own keymapping
 lvim.keys.normal_mode["<leader>r"] = ":lua require('spectre').open()<cr>"
-lvim.keys.normal_mode["mm"] = ":Glow<cr>"
 lvim.keys.normal_mode["<leader>u"] = ":UndotreeToggle<cr>:UndotreeFocus<cr>"
-lvim.keys.normal_mode["<leader>j"] = ":TermExec cmd='go run .' dir='~/golang/httui'<cr>"
 lvim.keys.insert_mode["kk"] = "<ESC>"
-lvim.keys.insert_mode["kk"] = "<ESC>"
+lvim.keys.insert_mode["jj"] = "<ESC>"
+
+lvim.builtin["terminal"].persist_size = true
+
+lvim.builtin["terminal"].on_config_done = function()
+  local terminal = require("toggleterm.terminal").Terminal
+  local httui = terminal:new { cmd = "httui", hidden = true }
+  local go = terminal:new { cmd = "go run .", hidden = true }
+  local glow = terminal:new { cmd = "glow", hidden = true }
 
 
+  function _Go_toggle()
+    go:toggle()
+  end
 
--- ToggleTerminal
-lvim.builtin.terminal.execs = {
-  { "lazygit", "<leader>gg", "LazyGit", "float" },
-  { "go run .", "<leader>a", "Go run .", "float" },
-}
+  function _Httui_toggle()
+    httui:toggle()
+  end
+
+  function _Glow_toggle()
+    glow:toggle()
+  end
+
+  vim.api.nvim_set_keymap("n", "<leader>t", "<cmd>lua _Go_toggle()<CR>", { noremap = true, silent = true })
+  vim.api.nvim_set_keymap("n", "<leader>a", "<cmd>lua _Httui_toggle()<CR>", { noremap = true, silent = true })
+  vim.api.nvim_set_keymap("n", "<leader>m", "<cmd>lua _Glow_toggle()<CR>", { noremap = true, silent = true })
+end
 
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
+lvim.builtin.which_key.active = true
+lvim.builtin.which_key.setup.ignore_missing = true
 lvim.builtin.alpha.active = false
 lvim.builtin.bufferline.active = false
 lvim.builtin.breadcrumbs.active = false
 lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
-lvim.builtin.terminal.persist_size = true
 
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
@@ -58,10 +77,8 @@ lvim.builtin.nvimtree.setup.renderer.icons.show.folder = false
 lvim.builtin.nvimtree.setup.renderer.icons.show.folder_arrow = false
 lvim.builtin.nvimtree.setup.renderer.icons.show.file = false
 
-
 lvim.plugins = {
   { "folke/zen-mode.nvim" },
-  { "ellisonleao/glow.nvim" },
   { "jbyuki/venn.nvim" },
   { "mbbill/undotree" },
   { "gandarfh/viscond" },
@@ -83,14 +100,6 @@ lvim.plugins = {
     end,
   },
 }
-
-
--- Custom plugins
-require "glow".setup({
-  style = "dark",
-  width = 120,
-  -- your override config
-})
 
 require "nvim-ts-autotag".setup()
 require "colorizer".setup()
